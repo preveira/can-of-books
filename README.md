@@ -1,11 +1,47 @@
-# Start your own "Can of Books" App
+# Can of Books
 
-This repository has starter code to begin work on creating your own online bookshelf.
+**Author**: Kawika Reveira, Justin Cheeseman
+**Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
 
-## What can books do?
+## Overview
+"A sleek web app for managing your personal book collection. Explore, categorize, and track your reading journey with ease. Share recommendations and connect with fellow book enthusiasts. Start building your literary haven today!"
 
-Books are life-changing. They have the power to enlighten, educate, entertain, heal, and help us grow. Build out this code base to create an web app to track what books have impacted you, and what's recommended to read next.
+## Getting Started
+<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
 
-## Use this template
+## Architecture
+<!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
 
-Clone this repo to your own account with the green "Use this template" button. Then, add any collaborators. Now you are ready to start adding features! Deploy your site to let the world know which books have had the greatest impact on you, and what's recommended. Enjoy!
+## Change Log
+03-11-2024 2:00pm: Repositories created, team members added to each repo for collaboration. Front-end and Back-end repositories cloned to teams local machines to begin work. .gitignore, eslintrc.json, eslintrc.cjs, node_modules, files added. Added dependencies to package.json. Initial push/merge made from server repo by Kawika.
+
+
+## Estimates
+
+Name of feature: ________________________________
+
+Estimate of time needed to complete: _____
+
+Start time: _____
+
+Finish time: _____
+
+Actual time needed to complete: _____
+
+*************************************************************************************************************************
+
+Name of feature: ________________________________
+
+Estimate of time needed to complete: _____
+
+Start time: _____
+
+Finish time: _____
+
+Actual time needed to complete: _____
+
+*************************************************************************************************************************
+
+
+## Credit and Collaborations
+<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
