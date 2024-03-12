@@ -1,19 +1,34 @@
 'use strict';
 
-require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const mongoose = require("mongoose");
+const dotenv = require('dotenv');
+const mongoose = require('mongoose');
 const app = express();
+const Books = require('./model/books.js');
+
+dotenv.config();
 app.use(cors());
 
 const PORT = process.env.PORT || 3001;
-
 const DATABASE_URL=process.env.DATABASE_URL;
-app.get('/test', (request, response) => {
 
-  response.send('test request received');
-
+app.get('/books', async (request, response) => {
+  try {
+    const books = await Books.find();
+    response.json(books);
+  } catch (error) {
+    response.status(500).send({ error: 'Error fetching books' });
+  }
 });
-mongoose.connect(DATABASE_URL).then( ()=> console.log('connected'));
-app.listen(PORT, () => console.log(`server running on ${PORT}`));
+
+mongoose.connect(DATABASE_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+}).then(() => {
+  app.listen(PORT, () => {
+    console.log(`server is running on ${PORT}`);
+  });
+}).catch(e => {
+  console.log('DB CONNECTION ISSUES!!', e);
+});

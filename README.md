@@ -15,6 +15,8 @@
 ## Change Log
 03-11-2024 2:00pm: Repositories created, team members added to each repo for collaboration. Front-end and Back-end repositories cloned to teams local machines to begin work. .gitignore, eslintrc.json, eslintrc.cjs, node_modules, files added. Added dependencies to package.json. Initial push/merge made from server repo by Kawika.
 
+03-11-2024 7:50pm: Deployed server can-of-books-api to reder.com for back-end deployment.
+
 
 ## Estimates
 
