@@ -17,18 +17,20 @@
 
 03-11-2024 7:50pm: Deployed server can-of-books-api to reder.com for back-end deployment.
 
+03-11-2024 11:05pm: GET Books function added to back-end server.
+
 
 ## Estimates
 
-Name of feature: ________________________________
+Name of feature: GET Books Function
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 3 hours
 
-Start time: _____
+Start time: 7pm
 
-Finish time: _____
+Finish time: 10:25pm
 
-Actual time needed to complete: _____
+Actual time needed to complete: 3.35 hours
 
 *************************************************************************************************************************
 
