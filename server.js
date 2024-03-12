@@ -9,6 +9,8 @@ const Books = require('./model/books.js');
 
 dotenv.config();
 app.use(cors());
+//Tells express to expect JSON in the request object
+app.use(express.json());
 
 const PORT = process.env.PORT || 3001;
 const DATABASE_URL=process.env.DATABASE_URL;
@@ -21,6 +23,32 @@ app.get('/books', async (request, response) => {
     response.status(500).send({ error: 'Error fetching books' });
   }
 });
+
+
+//creates a book object
+app.post('/books', (request, response) => {
+  let json = request.body;
+  console.log('HERE ARE THE BOOK VALUES', json);
+  response.send('Working on it!');
+});
+
+
+//reomove books from the object by id
+app.delete('/books/:id', async (request, response) => {
+  try {
+    const id = request.params.id;
+    const deletedBook = await Books.findOneAndDelete({ _id: id });
+
+    if (deletedBook) {
+      response.status(200).json({ message: 'Book deleted successfully', deletedBook });
+    } else {
+      response.status(404).json({ message: 'Book not found' });
+    }
+  } catch (error) {
+    response.status(500).json({ message: error.message });
+  }
+});
+
 
 mongoose.connect(DATABASE_URL, {
   useNewUrlParser: true,
