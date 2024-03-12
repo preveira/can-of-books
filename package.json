@@ -1,10 +1,11 @@
 {
-  "name": "auth0TestBack",
+  "name": "can-of-books-api",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js",
     "start": "node server.js"
   },
   "keywords": [],
@@ -16,12 +17,9 @@
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
-<<<<<<< HEAD
-    "mongoose": "^8.2.1"
-=======
+    "mongoose": "^8.2.1",
     "nodemon": "^3.1.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.1"
->>>>>>> f8550e44031777af2c82c0cad19d15c09152f232
   }
 }
