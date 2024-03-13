@@ -9,7 +9,7 @@ const newBookData = {
 };
 
 // Make a POST request to your server's /books endpoint
-axios.post('http://localhost:3001/model/books.js', newBookData)
+axios.post('http://localhost:3001/books.js', newBookData)
   .then(response => {
     console.log('Response:', response.data);
   })

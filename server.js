@@ -27,14 +27,20 @@ app.get('/books', async (request, response) => {
 
 
 //creates a book object
-app.post('/books', (request, response) => {
-  let json = request.body;
-  console.log('HERE ARE THE BOOK VALUES', json);
-  response.send('Working on it!');
+app.post('/books', async (request, response) => {
+  try {
+    let json = request.body;
+    console.log('HERE ARE THE BOOK VALUES', json);
+    let newBook = await Books.create(json);
+    response.send(newBook);
+  } catch (error) {
+    console.error('Error creating book:', error);
+    response.status(500).json({ error: 'Error creating book'});
+  }
 });
 
 
-//reomove books from the object by id
+//remove books from the object by id
 app.delete('/books/:id', async (request, response) => {
   try {
     const id = request.params.id;
