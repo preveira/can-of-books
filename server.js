@@ -56,6 +56,21 @@ app.delete('/books/:id', async (request, response) => {
   }
 });
 
+app.put('/books/:id', async (request, response) => {
+  try {
+    let json = request.body;
+    let id = request.params.id;
+
+    let document = await Books.findByIdAndUpdate({ _id: id }, json, {new: true});
+    response.send(document);
+  } catch(e) {
+    response.status(400).send('bad request');
+  }
+});
+
+//function findOneAndUpdate(filter, update, options) {}
+
+
 
 mongoose.connect(DATABASE_URL, {
   useNewUrlParser: true,
