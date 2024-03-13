@@ -15,4 +15,9 @@ mongoose.connect(DATABASE_URL)
     artOfWar.save();
     thinkGrowRich.save();
     richDadPoorDad.save();
+    console.log( `
+      ${artOfWar} ::
+      ${thinkGrowRich} ::
+      ${richDadPoorDad} ::
+    `);
   }).catch(e => console.error(e));
