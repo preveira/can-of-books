@@ -10,7 +10,7 @@ const Books = require('./model/books.js');
 dotenv.config();
 app.use(cors());
 //Tells express to expect JSON in the request object
-app.use(express.json());
+// app.use(express.json());
 
 const PORT = process.env.PORT || 3001;
 const DATABASE_URL=process.env.DATABASE_URL;
@@ -18,6 +18,7 @@ const DATABASE_URL=process.env.DATABASE_URL;
 app.get('/books', async (request, response) => {
   try {
     const books = await Books.find();
+    console.log('BOOKS FROM MONGODB', books);
     response.json(books);
   } catch (error) {
     response.status(500).send({ error: 'Error fetching books' });
