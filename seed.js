@@ -11,9 +11,27 @@ const DATABASE_URL = process.env.DATABASE_URL;
 
 mongoose.connect(DATABASE_URL)
   .then(() => {
-    let artOfWar = new Book({ title: 'The Art of War', description: 'An ancient Chinese military treatise that explores strategies and tactics for warfare, often applied metaphorically to business and leadership.', status: 'Available'});
-    let thinkGrowRich = new Book({ title: 'Think and Grow Rich', description: 'A personal development and self-help book that outlines principles for achieving success and wealth through mindset, visualization, and persistence.', status: 'Available'});
-    let richDadPoorDad = new Book({ title: 'Rich Dad Poor Dad', description: 'A personal finance classic that contrasts the financial philosophies of the authors rich dad and poor dad, offering insights into wealth-building strategies and financial literacy.', status: 'Available'});
+
+    // const bookImages = [
+    //   { url: 'img/taow.png', altText: 'The Art of War'},
+    //   { url: 'img/tagr.png', altText: 'Think And Grow Rich'},
+    //   { url: 'img/rdpd.png', altText: 'Rich Dad Poor Dad'},
+    // ];
+    let artOfWar = new Book({
+      title: 'The Art of War',
+      description: 'An ancient Chinese military treatise that explores strategies and tactics for warfare, often applied metaphorically to business and leadership.',
+      status: 'Available'
+    });
+    let thinkGrowRich = new Book({
+      title: 'Think and Grow Rich',
+      description: 'A personal development and self-help book that outlines principles for achieving success and wealth through mindset, visualization, and persistence.',
+      status: 'Available'
+    });
+    let richDadPoorDad = new Book({
+      title: 'Rich Dad Poor Dad',
+      description: 'A personal finance classic that contrasts the financial philosophies of the authors rich dad and poor dad, offering insights into wealth-building strategies and financial literacy.',
+      status: 'Available'
+    });
     artOfWar.save();
     thinkGrowRich.save();
     richDadPoorDad.save();
