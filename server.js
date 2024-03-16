@@ -6,11 +6,17 @@ const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const app = express();
 const Books = require('./model/books.js');
+const authorize = require ('./authorize.js');
+
 
 dotenv.config();
 app.use(cors());
+
 //Tells express to expect JSON in the request object
-// app.use(express.json());
+app.use(express.json());
+
+app.use(authorize);
+
 
 const PORT = process.env.PORT || 3001;
 const DATABASE_URL=process.env.DATABASE_URL;
@@ -58,13 +64,13 @@ app.delete('/books/:id', async (request, response) => {
 
 app.put('/books/:id', async (request, response) => {
   try {
-    let json = request.body;
     let id = request.params.id;
+    let updateFields = request.body;
 
-    let document = await Books.findByIdAndUpdate({ _id: id }, json, {new: true});
+    let document = await Books.findByIdAndUpdate(id, updateFields, { new: true });
     response.send(document);
-  } catch(e) {
-    response.status(400).send('bad request');
+  } catch (e) {
+    response.status(400).send('Bad request');
   }
 });
 
